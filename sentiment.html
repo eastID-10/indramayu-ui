@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analisis Sentimen — Basa Indramayu NLP</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">BI</span>
+      <span>Basa Indramayu NLP<small>Panel Model Bahasa Daerah</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" data-page="index.html">Beranda</a>
+      <a href="ner.html" data-page="ner.html">NER</a>
+      <a href="translate.html" data-page="translate.html">Penerjemah</a>
+      <a href="postag.html" data-page="postag.html">Kelas Kata</a>
+      <a href="qa.html" data-page="qa.html">Tanya Jawab</a>
+      <a href="sentiment.html" data-page="sentiment.html">Sentimen</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+
+<section class="feature-hero">
+  <div class="wrap">
+    <span class="eyebrow">Model 5 dari 5</span>
+    <h1>Analisis Sentimen</h1>
+    <p class="lede">Deteksi kecenderungan positif, negatif, atau netral dari sebuah kalimat Basa Indramayu.</p>
+    <div class="feature-meta">
+      <span class="tag">Skrip: js/sentiment.js</span>
+      <span class="tag">Task: Text classification</span>
+    </div>
+  </div>
+</section>
+
+<section class="playground">
+  <div class="wrap playground-grid">
+
+    <div class="panel">
+      <div class="panel-head"><h3>Masukan teks</h3></div>
+
+      <div class="example-row">
+        <button type="button" class="chip-btn" data-example="0">Contoh positif</button>
+        <button type="button" class="chip-btn" data-example="1">Contoh negatif</button>
+        <button type="button" class="chip-btn" data-example="2">Contoh netral</button>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="senInput">Teks Basa Indramayu</label>
+        <textarea id="senInput" rows="6" placeholder="Tulis kalimat basa Indramayu di sini…"></textarea>
+      </div>
+
+      <div class="panel-actions">
+        <button type="button" class="btn btn-primary" id="senRunBtn">Analisis sentimen</button>
+        <span class="status-badge" id="senStatus">Siap</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head"><h3>Hasil</h3></div>
+      <div class="output-box is-empty" id="senOutput">
+        <p class="empty-msg">Label sentimen beserta skor keyakinannya akan muncul di sini.</p>
+      </div>
+
+      <div class="integration-note">
+        Ganti fungsi <code>callSentimentModel()</code> di <code>js/sentiment.js</code>
+        dengan panggilan ke endpoint model sentimen fine-tuned Llama 3 Anda.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Basa Indramayu NLP — panel terpadu untuk model fine-tuned Llama 3.</p>
+    <div class="footer-links">
+      <a href="ner.html">NER</a>
+      <a href="translate.html">Penerjemah</a>
+      <a href="postag.html">Kelas Kata</a>
+      <a href="qa.html">Tanya Jawab</a>
+      <a href="sentiment.html">Sentimen</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/sentiment.js"></script>
+</body>
+</html>

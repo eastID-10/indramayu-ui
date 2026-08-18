@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="id" id="htmlRoot">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basa Indramayu NLP — Panel Model</title>
+  <meta name="description"
+    content="Satu pintu untuk mengakses lima model bahasa Basa Indramayu: NER, penerjemah, penanda kelas kata, tanya-jawab, dan analisis sentimen.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/index.css">
+</head>
+
+<body class="landing">
+
+  <header class="site-header">
+    <div class="wrap">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">BI</span>
+        <span>Basa Indramayu<small>Panel Model NLP</small></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" data-page="index.html" data-lang-id="Beranda" data-lang-en="Home">Beranda</a>
+        <a href="ner.html" target="_blank" data-page="ner.html">NER</a>
+        <a href="translate.html" target="_blank" data-page="translate.html" data-lang-id="Penerjemah"
+          data-lang-en="Translator">Penerjemah</a>
+        <a href="postag.html" target="_blank" data-page="postag.html" data-lang-id="Kelas Kata"
+          data-lang-en="POS Tagging">Kelas
+          Kata</a>
+        <a href="qa.html" target="_blank" data-page="qa.html" data-lang-id="Tanya Jawab" data-lang-en="Q&A">Tanya
+          Jawab</a>
+        <a href="sentiment.html" target="_blank" data-page="sentiment.html" data-lang-id="Sentimen"
+          data-lang-en="Sentiment">Sentimen</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="lang-switcher" id="langSwitcher">
+          <button class="lang-btn" id="langBtn" aria-label="Switch language">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="16" height="16">
+              <circle cx="12" cy="12" r="9" />
+              <path
+                d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z" />
+            </svg>
+            <span id="langLabel">ID</span>
+            <svg class="lang-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              width="12" height="12">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div class="lang-dropdown" id="langDropdown">
+            <button class="lang-option is-active" data-lang="id">🇮🇩 Indonesia</button>
+            <button class="lang-option" data-lang="en">🇬🇧 English</button>
+          </div>
+        </div>
+        <a href="ner.html" class="btn-dark" data-lang-id="Coba Sekarang" data-lang-en="Try Now">Coba Sekarang</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false"><span></span></button>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero-new">
+    <div class="wrap" style="position:relative;">
+
+      <div class="float-tile t1 c-pink">
+        <span class="tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M3 7l7-4 11 11-7 4L3 7z" />
+            <circle cx="7.5" cy="8.5" r="1.2" fill="currentColor" stroke="none" />
+          </svg></span>
+      </div>
+      <div class="float-tile t2 c-blue">
+        <span class="tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M4 6h9M8 3v3M11 6c-.6 3-2.3 5.4-5 7M6 10c1 1.3 2.6 2.3 4 2.8M14 21l4-9 4 9M15.8 18h4.4" />
+          </svg></span>
+      </div>
+      <div class="float-tile t3 c-gold">
+        <span class="tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M4 5h16M4 12h10M4 19h13" />
+            <circle cx="19" cy="12" r="1.4" fill="currentColor" stroke="none" />
+          </svg></span>
+      </div>
+      <div class="float-tile t4 c-teal">
+        <span class="tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M8.5 10h.01M15.5 10h.01M8 15c1.2 1 2.6 1.5 4 1.5s2.8-.5 4-1.5" />
+          </svg></span>
+      </div>
+
+      <div class="hero-inner">
+        <span class="eyebrow" data-lang-id="Basa Indramayu · Model bahasa lokal"
+          data-lang-en="Basa Indramayu · Local Language Model">Basa Indramayu · Model bahasa lokal</span>
+        <h1 data-lang-id="Pengembangan<span class='mark'>Model Bahasa Indramayu</span>"
+          data-lang-en="Development of<span class='mark'>Indramayu Language Model</span>">Pengembangan<span
+            class="mark">Model Bahasa Indramayu</span></h1>
+        <p class="lede"
+          data-lang-id="Berfokus pada pelestarian bahasa daerah untuk menjembatani Bahasa Indonesia dan Bahasa Jawa Dialek Indramayu melalui teknologi AI."
+          data-lang-en="Focused on preserving regional languages to bridge Indonesian and Javanese Indramayu Dialect through AI technology.">
+          Berfokus pada pelestarian bahasa daerah untuk menjembatani Bahasa Indonesia dan Bahasa Jawa
+          Dialek Indramayu melalui teknologi AI.</p>
+        <div class="hero-actions">
+          <a href="ner.html" class="btn btn-primary" data-lang-id="Jelajahi Model"
+            data-lang-en="Explore Models">Jelajahi Model <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" width="16" height="16">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg></a>
+          <a href="#model-list" class="btn btn-ghost" data-lang-id="Lihat semua model"
+            data-lang-en="View all models">Lihat semua model</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="wave-divider">
+      <svg viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 20 C 100 0, 200 40, 300 20 S 500 0, 600 20 S 800 40, 900 20 S 1100 0, 1200 20" fill="none"
+          stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============ SPLIT: platform framing ============ -->
+  <section class="split-new">
+    <div class="wrap split-grid">
+      <div>
+        <h2 data-lang-id="Pelestarian <span class='mark'>Bahasa Indramayu</span>dalam bentuk 5 model Fine-tuned LLMs"
+          data-lang-en="Preservation of <span class='mark'>Indramayu Language</span>through 5 Fine-tuned LLMs">
+          Pelestarian <span class="mark">Bahasa Indramayu</span>dalam bentuk 5 model Fine-tuned LLMs</h2>
+        <p class="lede"
+          data-lang-id="Setiap model dikembangkan dengan pendekatan khusus, dengan tugasnya masing-masing. Guna keberlanjutan bahasa indramayu sebagai bahasa daerah dengan sumber daya terbatas."
+          data-lang-en="Each model is developed with a specialized approach for its respective task. Aimed at sustaining the Indramayu language as a low-resource regional language.">
+          Setiap model dikembangkan dengan pendekatan khusus, dengan tugasnya masing-masing. Guna
+          keberlanjutan bahasa indramayu sebagai bahasa daerah dengan sumber daya terbatas.</p>
+      </div>
+      <div class="ring-wrap">
+        <div class="ring r1"></div>
+        <div class="ring r2"></div>
+        <div class="ring r3"></div>
+        <div class="ring-center">
+          <strong>5</strong>
+          <span data-lang-id="Model aktif" data-lang-en="Active models">Model aktif</span>
+        </div>
+        <div class="ring-badge b1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 17h.01M9.5 9a2.5 2.5 0 0 1 5 0c0 1.7-2.5 2-2.5 4" />
+            <rect x="3" y="4" width="18" height="14" rx="3" />
+          </svg>
+        </div>
+        <div class="ring-badge b2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M4 5h16M4 12h10M4 19h13" />
+            <circle cx="19" cy="12" r="1.4" fill="currentColor" stroke="none" />
+          </svg>
+        </div>
+        <div class="ring-badge b3">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M8.5 10h.01M15.5 10h.01M8 15c1.2 1 2.6 1.5 4 1.5s2.8-.5 4-1.5" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FLOW: why this repo ============ -->
+  <section class="flow-new">
+    <div class="wrap">
+      <div class="flow-chips">
+        <div class="flow-chip c-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M3 7l7-4 11 11-7 4L3 7z" />
+          </svg></div>
+        <div class="flow-chip c-gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M4 5h16M4 12h10M4 19h13" />
+          </svg></div>
+        <div class="flow-chip c-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M4 6h9M8 3v3M11 6c-.6 3-2.3 5.4-5 7" />
+          </svg></div>
+      </div>
+
+      <h2 data-lang-id="Cara Penggunaan" data-lang-en="How to Use">Cara Penggunaan</h2>
+      <p class="lede"
+        data-lang-id="Terdapat 5 pilihan fitur yang dapat digunakan untuk mencoba model-model bahasa Indramayu."
+        data-lang-en="There are 5 feature options available to try the Indramayu language models.">Terdapat 5 pilihan
+        fitur yang dapat digunakan untuk mencoba model-model bahasa Indramayu.</p>
+      <a href="ner.html" class="btn btn-primary" data-lang-id="Coba Model" data-lang-en="Try Model">Coba Model</a>
+
+      <div class="flow-tree">
+        <div class="flow-branches">
+          <div class="flow-branch">
+            <div class="dot"></div>
+            <strong data-lang-id="Pilih Model" data-lang-en="Select Model">Pilih Model</strong>
+            <span data-lang-id="Memilih model yang ingin digunakan untuk uji coba."
+              data-lang-en="Choose the model you want to test.">Memilih model yang ingin digunakan untuk uji
+              coba.</span>
+          </div>
+          <div class="flow-branch">
+            <div class="dot"></div>
+            <strong data-lang-id="Server Aktif" data-lang-en="Server Active">Server Aktif</strong>
+            <span data-lang-id="Memastikan server model berjalan dengan normal."
+              data-lang-en="Ensure the model server is running properly.">Memastikan server model berjalan dengan
+              normal.</span>
+          </div>
+          <div class="flow-branch">
+            <div class="dot"></div>
+            <strong data-lang-id="Coba Model" data-lang-en="Try Model">Coba Model</strong>
+            <span data-lang-id="Menjalankan uji coba pada model yang dipilih."
+              data-lang-en="Run a test on the selected model.">Menjalankan uji coba pada model yang dipilih.</span>
+          </div>
+          <div class="flow-branch">
+            <div class="dot"></div>
+            <strong data-lang-id="Hasil Keluaran Model" data-lang-en="Model Output">Hasil Keluaran Model</strong>
+            <span data-lang-id="Menampilkan hasil dari uji coba model."
+              data-lang-en="Display the results of the model test.">Menampilkan hasil dari uji coba model.</span>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MODEL LIST ============ -->
+  <section class="section" id="model-list">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow" data-lang-id="Model tersedia" data-lang-en="Available models">Model tersedia</span>
+        <h2 data-lang-id="Pilih model untuk mulai mencoba" data-lang-en="Choose a model to start testing">Pilih model
+          untuk mulai mencoba</h2>
+        <p data-lang-id="Setiap kartu membuka halaman uji coba khusus model tersebut, lengkap dengan skrip JavaScript-nya sendiri."
+          data-lang-en="Each card opens a dedicated test page for that model, complete with its own JavaScript script.">
+          Setiap kartu membuka halaman uji coba khusus model tersebut, lengkap dengan skrip JavaScript-nya sendiri.</p>
+      </div>
+
+      <div class="model-grid">
+
+        <a href="ner.html" class="model-card">
+          <div class="glyph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M3 7l7-4 11 11-7 4L3 7z" />
+              <circle cx="7.5" cy="8.5" r="1.2" fill="currentColor" stroke="none" />
+            </svg>
+          </div>
+          <h3 data-lang-id="Pengenalan Entitas (NER)" data-lang-en="Named Entity Recognition (NER)">Pengenalan Entitas
+            (NER)</h3>
+          <p data-lang-id="Mengenali nama orang, tempat, dan organisasi di dalam teks Basa Indramayu."
+            data-lang-en="Recognize names of people, places, and organizations in Basa Indramayu text.">Mengenali nama
+            orang, tempat, dan organisasi di dalam teks Basa Indramayu.</p>
+          <div class="tag-row"><span class="tag">ner.js</span><span class="tag">Token-level</span></div>
+          <span class="card-link" data-lang-id="Coba model" data-lang-en="Try model">Coba model <svg viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg></span>
+        </a>
+
+        <a href="translate.html" class="model-card">
+          <div class="glyph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M4 6h9M8 3v3M11 6c-.6 3-2.3 5.4-5 7M6 10c1 1.3 2.6 2.3 4 2.8M14 21l4-9 4 9M15.8 18h4.4" />
+            </svg>
+          </div>
+          <h3 data-lang-id="Mesin Penerjemah" data-lang-en="Machine Translation">Mesin Penerjemah</h3>
+          <p data-lang-id="Menerjemahkan teks dua arah antara Basa Indramayu dan Bahasa Indonesia."
+            data-lang-en="Translate text bidirectionally between Basa Indramayu and Indonesian.">Menerjemahkan teks dua
+            arah antara Basa Indramayu dan Bahasa Indonesia.</p>
+          <span class="card-link" data-lang-id="Coba model" data-lang-en="Try model">Coba model <svg viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg></span>
+        </a>
+
+        <a href="postag.html" class="model-card">
+          <div class="glyph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M4 5h16M4 12h10M4 19h13" />
+              <circle cx="19" cy="12" r="1.4" fill="currentColor" stroke="none" />
+            </svg>
+          </div>
+          <h3 data-lang-id="Penanda Kelas Kata" data-lang-en="POS Tagger">Penanda Kelas Kata</h3>
+          <p data-lang-id="Menandai setiap kata dengan kelas katanya: kata benda, kerja, sifat, dan lainnya."
+            data-lang-en="Tag each word with its part of speech: noun, verb, adjective, and more.">Menandai setiap kata
+            dengan kelas katanya: kata benda, kerja, sifat, dan lainnya.</p>
+          <div class="tag-row"><span class="tag">postag.js</span><span class="tag">Token-level</span></div>
+          <span class="card-link" data-lang-id="Coba model" data-lang-en="Try model">Coba model <svg viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg></span>
+        </a>
+
+        <a href="qa.html" class="model-card">
+          <div class="glyph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M12 17h.01M9.5 9a2.5 2.5 0 0 1 5 0c0 1.7-2.5 2-2.5 4" />
+              <rect x="3" y="4" width="18" height="14" rx="3" />
+            </svg>
+          </div>
+          <h3 data-lang-id="Tanya Jawab" data-lang-en="Question & Answer">Tanya Jawab</h3>
+          <p data-lang-id="Menjawab pertanyaan berdasarkan sebuah teks bacaan dalam Basa Indramayu."
+            data-lang-en="Answer questions based on a reading passage in Basa Indramayu.">Menjawab pertanyaan
+            berdasarkan sebuah teks bacaan dalam Basa Indramayu.</p>
+          <div class="tag-row"><span class="tag">qa.js</span><span class="tag">Extractive</span></div>
+          <span class="card-link" data-lang-id="Coba model" data-lang-en="Try model">Coba model <svg viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg></span>
+        </a>
+
+        <a href="sentiment.html" class="model-card">
+          <div class="glyph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M8.5 10h.01M15.5 10h.01M8 15c1.2 1 2.6 1.5 4 1.5s2.8-.5 4-1.5" />
+            </svg>
+          </div>
+          <h3 data-lang-id="Analisis Sentimen" data-lang-en="Sentiment Analysis">Analisis Sentimen</h3>
+          <p data-lang-id="Mendeteksi kecenderungan positif, negatif, atau netral dari sebuah kalimat."
+            data-lang-en="Detect positive, negative, or neutral tendencies from a sentence.">Mendeteksi kecenderungan
+            positif, negatif, atau netral dari sebuah kalimat.</p>
+          <div class="tag-row"><span class="tag">sentiment.js</span><span class="tag">Classification</span></div>
+          <span class="card-link" data-lang-id="Coba model" data-lang-en="Try model">Coba model <svg viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg></span>
+        </a>
+        <!-- 
+      <div class="model-card" style="background:var(--bg-tint); border-style:dashed;">
+        <div class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></div>
+        <h3>Model berikutnya</h3>
+        <p>Tambahkan halaman baru + skrip khusus, lalu daftarkan di navigasi untuk menyatukannya di sini.</p>
+        <div class="tag-row"><span class="tag">repo terpadu</span></div>
+      </div> -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DARK CTA ============ -->
+  <section class="cta-dark">
+    <div class="wrap">
+      <div class="cta-dark-card">
+        <div class="blob b-tl"></div>
+        <div class="blob b-tr"></div>
+        <div class="blob b-bl"></div>
+        <div class="blob b-br"></div>
+
+        <h2 data-lang-id="Coba semua <span class='mark'>5 model</span> bahasa Indramayu"
+          data-lang-en="Try all <span class='mark'>5 models</span> of Indramayu language">Coba semua <span
+            class="mark">5 model</span> bahasa Indramayu</h2>
+        <p class="lede"
+          data-lang-id="Klik salah satu di bawah ini, coba langsung di browser — tidak perlu setup tambahan."
+          data-lang-en="Click one below, try it directly in your browser — no additional setup required.">Klik salah
+          satu di bawah ini, coba langsung di browser — tidak perlu setup tambahan.</p>
+        <div class="hero-actions">
+          <a href="ner.html" class="btn btn-primary" data-lang-id="Coba Sekarang" data-lang-en="Try Now">Coba
+            Sekarang</a>
+          <a href="#model-list" class="btn btn-ghost" data-lang-id="Lihat semua model"
+            data-lang-en="View all models">Lihat semua model</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p data-lang-id="Basa Indramayu NLP — panel terpadu untuk model fine-tuned Llama 3."
+        data-lang-en="Basa Indramayu NLP — unified panel for fine-tuned Llama 3 models.">Basa Indramayu NLP — panel
+        terpadu untuk model fine-tuned Llama 3.</p>
+      <div class="footer-links">
+        <a href="ner.html">NER</a>
+        <a href="translate.html" data-lang-id="Penerjemah" data-lang-en="Translator">Penerjemah</a>
+        <a href="postag.html" data-lang-id="Kelas Kata" data-lang-en="POS Tagging">Kelas Kata</a>
+        <a href="qa.html" data-lang-id="Tanya Jawab" data-lang-en="Q&A">Tanya Jawab</a>
+        <a href="sentiment.html" data-lang-id="Sentimen" data-lang-en="Sentiment">Sentimen</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

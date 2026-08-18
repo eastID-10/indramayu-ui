@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tanya Jawab — Basa Indramayu NLP</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">BI</span>
+      <span>Basa Indramayu NLP<small>Panel Model Bahasa Daerah</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" data-page="index.html">Beranda</a>
+      <a href="ner.html" data-page="ner.html">NER</a>
+      <a href="translate.html" data-page="translate.html">Penerjemah</a>
+      <a href="postag.html" data-page="postag.html">Kelas Kata</a>
+      <a href="qa.html" data-page="qa.html">Tanya Jawab</a>
+      <a href="sentiment.html" data-page="sentiment.html">Sentimen</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+
+<section class="feature-hero">
+  <div class="wrap">
+    <span class="eyebrow">Model 4 dari 5</span>
+    <h1>Tanya Jawab (Question Answering)</h1>
+    <p class="lede">Berikan sebuah teks bacaan (konteks) dalam Basa Indramayu, lalu ajukan pertanyaan. Model akan mengambil jawabannya langsung dari teks.</p>
+    <div class="feature-meta">
+      <span class="tag">Skrip: js/qa.js</span>
+      <span class="tag">Task: Extractive QA</span>
+    </div>
+  </div>
+</section>
+
+<section class="playground">
+  <div class="wrap playground-grid">
+
+    <div class="panel">
+      <div class="panel-head"><h3>Konteks &amp; pertanyaan</h3></div>
+
+      <div class="example-row">
+        <button type="button" class="chip-btn" data-example="0">Isi contoh</button>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="qaContext">Teks bacaan (konteks)</label>
+        <textarea id="qaContext" rows="6" placeholder="Tempel paragraf Basa Indramayu di sini…"></textarea>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="qaQuestion">Pertanyaan</label>
+        <input type="text" id="qaQuestion" placeholder="Contoh: Sapa sing lunga menyang pasar?">
+      </div>
+
+      <div class="panel-actions">
+        <button type="button" class="btn btn-primary" id="qaRunBtn">Cari jawaban</button>
+        <span class="status-badge" id="qaStatus">Siap</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head"><h3>Jawaban</h3></div>
+      <div class="output-box is-empty" id="qaOutput">
+        <p class="empty-msg">Jawaban model akan muncul di sini, diambil langsung dari konteks.</p>
+      </div>
+
+      <div class="integration-note">
+        Ganti fungsi <code>callQaModel()</code> di <code>js/qa.js</code>
+        dengan panggilan ke endpoint model tanya-jawab fine-tuned Llama 3 Anda.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Basa Indramayu NLP — panel terpadu untuk model fine-tuned Llama 3.</p>
+    <div class="footer-links">
+      <a href="ner.html">NER</a>
+      <a href="translate.html">Penerjemah</a>
+      <a href="postag.html">Kelas Kata</a>
+      <a href="qa.html">Tanya Jawab</a>
+      <a href="sentiment.html">Sentimen</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/qa.js"></script>
+</body>
+</html>
